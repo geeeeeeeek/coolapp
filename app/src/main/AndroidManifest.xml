@@ -16,5 +16,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".activity.RxJavaActivity"/>
+        <activity android:name=".activity.CoolTabActivity"/>
     </application>
 </manifest>

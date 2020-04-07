@@ -1,8 +1,6 @@
 package com.geeeeeeeek.coolapp.activity;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
 import com.geeeeeeeek.coolapp.model.Student;
@@ -12,6 +10,8 @@ import org.reactivestreams.Publisher;
 
 import java.util.concurrent.TimeUnit;
 
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import io.reactivex.Flowable;
 import io.reactivex.Observable;
 import io.reactivex.Observer;

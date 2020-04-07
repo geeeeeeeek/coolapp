@@ -2,13 +2,13 @@ package com.geeeeeeeek.coolapp.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
 
 import com.geeeeeeeek.coolapp.R;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 
 /**
  * Created by XiaoQingsong
@@ -24,6 +24,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         btnRxjava = findViewById(R.id.btn_rxjava);
         setListeners();
+
+        startActivity(new Intent(this, CoolTabActivity.class));
     }
 
     private void setListeners() {
