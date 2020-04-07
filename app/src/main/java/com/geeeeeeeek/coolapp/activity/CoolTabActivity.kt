@@ -7,6 +7,7 @@ import androidx.fragment.app.FragmentStatePagerAdapter
 import com.geeeeeeeek.coolapp.R
 import com.geeeeeeeek.coolapp.fragment.ContactsFragment
 import com.geeeeeeeek.coolapp.groupcontacts.GroupFragment
+import com.google.android.material.tabs.TabLayout
 import kotlinx.android.synthetic.main.activity_cooltab.*
 
 /**
@@ -34,6 +35,7 @@ class CoolTabActivity : FragmentActivity() {
 
         view_pager.adapter = viewPagerAdapter
         tabLayout.setupWithViewPager(view_pager)
+        tabLayout.tabMode = TabLayout.MODE_FIXED;
     }
 
     private var viewPagerAdapter = object : FragmentStatePagerAdapter(supportFragmentManager){

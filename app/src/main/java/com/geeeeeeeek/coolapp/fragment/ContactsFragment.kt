@@ -32,7 +32,7 @@ class ContactsFragment : BaseFragment() {
     override fun initialize() {
         rv.layoutManager = LinearLayoutManager(activity).also { mManager = it }
 
-        mAdapter = ContactAdapter(activity, mDatas)
+        mAdapter = ContactAdapter(R.layout.item_city, mDatas)
         mHeaderAdapter = object : HeaderRecyclerAndFooterWrapperAdapter(mAdapter) {
             override fun onBindHeaderHolder(holder: ViewHolder, headerPos: Int, layoutId: Int, o: Any?) {
                 holder.setText(R.id.tvCity, o as String?)
@@ -63,7 +63,7 @@ class ContactsFragment : BaseFragment() {
         indexBar.setmSourceDatas(mDatas)
                 .setHeaderViewCount(mHeaderAdapter!!.headerViewCount) //设置HeaderView数量
                 .invalidate()
-        mAdapter!!.datas = mDatas
+        mAdapter?.addData(mDatas!!)
         mHeaderAdapter!!.notifyDataSetChanged()
         mDecoration!!.setmDatas(mDatas)
     }

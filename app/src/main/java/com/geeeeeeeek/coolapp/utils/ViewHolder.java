@@ -20,6 +20,8 @@ import android.widget.ProgressBar;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
+import com.chad.library.adapter.base.viewholder.BaseViewHolder;
+
 import androidx.recyclerview.widget.RecyclerView;
 
 /**
@@ -27,7 +29,7 @@ import androidx.recyclerview.widget.RecyclerView;
  * Created by zhangxutong .
  * Date: 16/03/11
  */
-public class ViewHolder extends RecyclerView.ViewHolder {
+public class ViewHolder extends BaseViewHolder {
     private SparseArray<View> mViews;
     private int mPosition;
     private View mConvertView;
@@ -68,20 +70,20 @@ public class ViewHolder extends RecyclerView.ViewHolder {
     }
 
 
-    /**
-     * 通过viewId获取控件
-     *
-     * @param viewId
-     * @return
-     */
-    public <T extends View> T getView(int viewId) {
-        View view = mViews.get(viewId);
-        if (view == null) {
-            view = mConvertView.findViewById(viewId);
-            mViews.put(viewId, view);
-        }
-        return (T) view;
-    }
+//    /**
+//     * 通过viewId获取控件
+//     *
+//     * @param viewId
+//     * @return
+//     */
+//    public <T extends View> T getView(int viewId) {
+//        View view = mViews.get(viewId);
+//        if (view == null) {
+//            view = mConvertView.findViewById(viewId);
+//            mViews.put(viewId, view);
+//        }
+//        return (T) view;
+//    }
 
     public View getConvertView() {
         return mConvertView;
