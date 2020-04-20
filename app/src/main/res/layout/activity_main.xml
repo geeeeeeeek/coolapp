@@ -1,8 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+    <com.geeeeeeeek.coolapp.widget.CustomToolbar
+        android:id="@+id/custom_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:background="@color/md_white_1000"
+        app:navigationBackColor="@color/md_grey_700"
+        app:navigationBackIcon="@mipmap/ic_back"
+        app:showBottomLine="true"
+        app:showNavigationBack="true"
+        app:title="title"
+        app:titleColor="@color/md_black_1000"
+        app:translucentStatus="false" />
 
     <Button
         android:id="@+id/btn_rxjava"
@@ -10,4 +24,19 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="Rxjava"/>
+
+    <RelativeLayout
+        android:layout_width="100dp"
+        android:layout_height="100dp">
+        <com.geeeeeeeek.coolapp.widget.RoundImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:src="@mipmap/test_image"/>
+        <com.geeeeeeeek.coolapp.widget.ProgressView
+            android:id="@+id/pv_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </RelativeLayout>
+
 </LinearLayout>
