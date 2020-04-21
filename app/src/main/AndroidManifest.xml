@@ -22,5 +22,6 @@
         </activity>
         <activity android:name=".activity.RxJavaActivity"/>
         <activity android:name=".activity.CoolTabActivity"/>
+        <activity android:name=".activity.JiankangActivity"/>
     </application>
 </manifest>

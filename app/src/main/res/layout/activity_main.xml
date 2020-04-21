@@ -25,6 +25,23 @@
         android:gravity="center"
         android:text="Rxjava"/>
 
+    <EditText
+        android:id="@+id/et_start_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="start"/>
+    <EditText
+        android:id="@+id/et_end_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="end"/>
+    <Button
+        android:id="@+id/btn_beijing"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="jiankang"/>
+
     <RelativeLayout
         android:layout_width="100dp"
         android:layout_height="100dp">

@@ -7,6 +7,7 @@ import android.os.Message;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.geeeeeeeek.coolapp.R;
@@ -41,6 +42,9 @@ import retrofit2.Response;
 public class MainActivity extends BaseActivity {
     public static final String TAG = "CoolApp";
     private Button btnRxjava;
+    private Button btnJiankang;
+    private EditText mEditStart;
+    private EditText mEditEnd;
     private ProgressView progressView;
     private int progress = 0;
 
@@ -49,7 +53,10 @@ public class MainActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         btnRxjava = findViewById(R.id.btn_rxjava);
+        btnJiankang = findViewById(R.id.btn_beijing);
         progressView = findViewById(R.id.pv_view);
+        mEditStart = findViewById(R.id.et_start_date);
+        mEditEnd = findViewById(R.id.et_end_date);
         setListeners();
 //        testApi();
         testDownload();
@@ -57,12 +64,14 @@ public class MainActivity extends BaseActivity {
     }
 
     private void setListeners() {
-        btnRxjava.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                startActivity(new Intent(MainActivity.this, CoolTabActivity.class));
-            }
+        btnRxjava.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, CoolTabActivity.class)));
+        btnJiankang.setOnClickListener(view -> {
+            String startTime = mEditStart.getText().toString().trim();
+            String endTime = mEditEnd.getText().toString().trim();
+            Intent intent = new Intent(MainActivity.this, JiankangActivity.class);
+            intent.putExtra("startTime", startTime);
+            intent.putExtra("endTime", endTime);
+            startActivity(intent);
         });
     }
 

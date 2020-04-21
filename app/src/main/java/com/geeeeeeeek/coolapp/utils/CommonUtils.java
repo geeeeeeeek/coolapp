@@ -10,6 +10,8 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 
@@ -23,6 +25,11 @@ import okhttp3.ResponseBody;
 public class CommonUtils {
     public static final String TAG = "CommonUtils";
 
+    public static String getDateToString(long milSecond, String pattern) {
+        Date date = new Date(milSecond);
+        SimpleDateFormat format = new SimpleDateFormat(pattern);
+        return format.format(date);
+    }
 
     public static boolean writeResponseBodyToDisk(ResponseBody body, File file, DownloadProgressListener progressListener) {
         try {
