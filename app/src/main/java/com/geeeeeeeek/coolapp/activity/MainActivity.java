@@ -43,6 +43,7 @@ public class MainActivity extends BaseActivity {
     public static final String TAG = "CoolApp";
     private Button btnRxjava;
     private Button btnJiankang;
+    private Button btnUCrop;
     private EditText mEditStart;
     private EditText mEditEnd;
     private ProgressView progressView;
@@ -54,6 +55,7 @@ public class MainActivity extends BaseActivity {
         setContentView(R.layout.activity_main);
         btnRxjava = findViewById(R.id.btn_rxjava);
         btnJiankang = findViewById(R.id.btn_beijing);
+        btnUCrop = findViewById(R.id.btn_ucrop);
         progressView = findViewById(R.id.pv_view);
         mEditStart = findViewById(R.id.et_start_date);
         mEditEnd = findViewById(R.id.et_end_date);
@@ -72,6 +74,9 @@ public class MainActivity extends BaseActivity {
             intent.putExtra("startTime", startTime);
             intent.putExtra("endTime", endTime);
             startActivity(intent);
+        });
+        btnUCrop.setOnClickListener(view -> {
+            startActivity(new Intent(MainActivity.this, CustomUCropActivity.class));
         });
     }
 
