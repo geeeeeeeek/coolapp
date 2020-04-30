@@ -67,6 +67,7 @@ public class ProgressView extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
+        canvas.save();
 
         w = getWidth();
         h = getHeight();

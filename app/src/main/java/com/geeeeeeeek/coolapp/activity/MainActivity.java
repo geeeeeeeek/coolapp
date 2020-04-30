@@ -17,6 +17,7 @@ import com.geeeeeeeek.coolapp.http.RequestBodyUtil;
 import com.geeeeeeeek.coolapp.utils.CommonUtils;
 import com.geeeeeeeek.coolapp.utils.DownloadProgressListener;
 import com.geeeeeeeek.coolapp.widget.ProgressView;
+import com.geeeeeeeek.coolapp.widget.UploadProgressView;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -47,7 +48,8 @@ public class MainActivity extends BaseActivity {
     private EditText mEditStart;
     private EditText mEditEnd;
     private ProgressView progressView;
-    private int progress = 0;
+    private UploadProgressView uploadProgressView;
+    private int progress = 1;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -57,6 +59,7 @@ public class MainActivity extends BaseActivity {
         btnJiankang = findViewById(R.id.btn_beijing);
         btnUCrop = findViewById(R.id.btn_ucrop);
         progressView = findViewById(R.id.pv_view);
+        uploadProgressView = findViewById(R.id.upload_view);
         mEditStart = findViewById(R.id.et_start_date);
         mEditEnd = findViewById(R.id.et_end_date);
         setListeners();
@@ -142,8 +145,9 @@ public class MainActivity extends BaseActivity {
         @Override
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
-            progressView.setProgress(progress++);
-            sendEmptyMessageDelayed(1, 200);
+            progressView.setProgress(progress+=1);
+            uploadProgressView.setProgress(progress+=1);
+            sendEmptyMessageDelayed(1, 100);
         }
     };
 

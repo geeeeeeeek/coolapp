@@ -56,6 +56,28 @@
             android:layout_height="wrap_content"/>
     </RelativeLayout>
 
+    <RelativeLayout
+        android:layout_width="100dp"
+        android:layout_height="100dp">
+        <com.geeeeeeeek.coolapp.widget.RoundImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:src="@mipmap/test_image"/>
+        <com.geeeeeeeek.coolapp.widget.UploadProgressView
+            android:id="@+id/upload_view"
+            android:layout_width="100dip"
+            android:layout_height="100dip"
+            android:layout_gravity="center"
+            android:layout_margin="10dip"
+            app:srp_max="100"
+            app:srp_progressColor="@color/md_red_500"
+            app:srp_roundColor="@color/md_black_555"
+            app:srp_roundWidth="10dip"
+            app:srp_startAngle="135"
+            app:srp_style="STROKE" />
+    </RelativeLayout>
+
     <Button
         android:id="@+id/btn_ucrop"
         android:layout_width="match_parent"
